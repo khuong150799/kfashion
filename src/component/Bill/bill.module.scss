@@ -1,0 +1,126 @@
+.bill {
+    padding: 30px;
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+    min-height: 200px;
+    font-family: 'jost', sans-serif;
+    color: #191919;
+}
+.bill__heading {
+    border-bottom: 2px solid #e6e6e6;
+}
+.bill__heading-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.suptotal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    padding: 15px 0;
+    font-weight: 600;
+}
+.bill__body {
+    border-bottom: 2px solid #e6e6e6;
+}
+.shipping {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+.shipping-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.shipping-type {
+    .name-check {
+        margin-left: 10px;
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+}
+.flat-rate,
+.normal-shopping {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    label {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.vat {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 15px 0;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+.total-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.total-price {
+    font-size: 2.6rem;
+}
+.checkout {
+    display: block;
+    width: 100%;
+    font-size: 2rem;
+    color: #fff !important;
+    background-color: #191919;
+    padding: 13px 0;
+    border-radius: 100px;
+    margin: 15px 0;
+    text-align: center;
+    &:hover {
+        color: #191919 !important;
+        background-color: #fff;
+        transition: 350ms ease 0s;
+    }
+}
+
+//checkout
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table__title-main-one,
+.table__title-one,
+.table__title-main-two,
+.table__title-two {
+    font-size: 1.5rem;
+    color: #191919;
+    padding: 15px 0;
+}
+.table__title-main-one,
+.table__title-main-two {
+    font-weight: 600;
+}
+.table__title-one {
+    width: 70%;
+}
+.table__title-main-two,
+.table__title-two {
+    width: 30%;
+    text-align: right;
+}
+.table__content {
+    border-bottom: 2px solid #e6e6e6;
+}
+
+//--------------------------------------
+@media (max-width: 768px) {
+    .bill {
+        margin-top: 50px;
+    }
+}

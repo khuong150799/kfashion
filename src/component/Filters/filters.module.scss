@@ -1,0 +1,22 @@
+.wrapper {
+    max-width: 242px;
+    padding-right: 24px;
+    min-height: 200px;
+    background-color: #fff;
+}
+.categories__title,
+.color__title,
+.size__title {
+    font-size: 1.7rem;
+    color: #191919;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.color__title,
+.size__title {
+    margin-top: 40px;
+}
+.categories__list-men-item {
+    text-transform: capitalize;
+    display: none;
+}

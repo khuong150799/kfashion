@@ -1,0 +1,135 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 370px;
+    margin: auto;
+    padding: 0 28px 28px;
+}
+.header {
+    font-size: 2.6rem;
+    font-family: 'TradeGothicforNike365-BdCn';
+    color: #111111;
+    padding: 32px 18px 38px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.form-control,
+.inp-gender + label {
+    padding: 11px 16px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    font-size: 1.4rem;
+    color: #8d8d8d;
+    font-weight: 400;
+    cursor: text;
+}
+.form-group.active .form-control {
+    border-color: #fe0000;
+    outline: 0px solid #fe0000;
+}
+.form-group.active .form-message {
+    display: block;
+    color: #fe0000;
+    margin: 4px 0 10px;
+    font-size: 1.2rem;
+}
+.form-message {
+    margin: 4px 0 10px;
+}
+
+.gender {
+    width: 100%;
+    display: flex;
+}
+.inp-gender {
+    display: none;
+}
+.inp-gender + label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    cursor: pointer;
+}
+
+.inp-gender + label:first-child {
+    margin-right: 8px;
+}
+
+.inp-gender + label:last-child {
+    margin-left: 8px;
+}
+
+.inp-gender:checked + label .check-male {
+    display: block;
+}
+.inp-gender:checked + label .check-female {
+    display: block;
+}
+.inp-gender:checked + label {
+    border: 1px solid #111;
+    color: #111;
+}
+
+.check-female,
+.check-male {
+    display: none;
+}
+
+.terms {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #8d8d8d;
+    padding: 3px 0 24px;
+    text-align: center;
+}
+
+.btn {
+    width: 100%;
+    font-size: 1.6rem;
+    background-color: #191919;
+    border-radius: 3px;
+    color: #fff;
+    padding: 12px;
+    text-transform: uppercase;
+    margin: 5px 0;
+    font-family: 'TradeGothicforNike365-BdCn';
+    border: 1px solid transparent;
+    transition: 350ms ease 0s;
+    &:hover {
+        background-color: #fff;
+        color: #191919;
+        border: 1px solid #e6e6e6;
+    }
+}
+
+.quesion {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 15px 0 5px;
+    text-align: center;
+    color: #8d8d8d;
+}
+
+.link {
+    text-decoration: underline !important;
+}
+
+//font custom
+@font-face {
+    font-family: 'TradeGothicforNike365-BdCn';
+    src: url('/assets/fonts/TradeGothicForNike365.ttf');
+    font-weight: 700;
+}

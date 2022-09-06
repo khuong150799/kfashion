@@ -1,0 +1,124 @@
+.wrapper {
+    max-width: var(--width-page);
+    margin: auto;
+    font-family: 'Jost', sans-serif;
+    padding: 0 25px;
+}
+
+.header {
+    font-size: 5.5rem;
+    color: #191919;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.times {
+    display: block;
+    font-size: 1.3rem;
+    color: #191919;
+    padding-top: 4px;
+    margin: 0 0 60px 118px;
+}
+
+.image-main {
+    width: 100%;
+}
+.image-main-img {
+    width: 100%;
+}
+
+.paragraph-one {
+    max-width: 840px;
+    margin: 26px auto 50px;
+}
+.content__header,
+.paragraph-two__header {
+    font-size: 4rem;
+    color: #191919;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.content__sup-header,
+.paragraph-two__sup-header {
+    font-size: 2rem;
+    color: #191919;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.content__text,
+.paragraph-two__text {
+    font-size: 1.6rem;
+    color: #191919;
+    margin-bottom: 40px;
+}
+.content__text > p:first-child {
+    margin-bottom: 20px;
+}
+.content__list-check {
+    list-style: none;
+}
+
+.content__item-check {
+    display: flex;
+    align-items: center;
+    padding-bottom: 7px;
+}
+.icon-check {
+    font-size: 1.2rem;
+    color: #d9121f;
+    margin-right: 10px;
+}
+
+.paragraph-two {
+    width: 100%;
+    display: flex;
+    margin-bottom: 60px;
+}
+.sup-img {
+    width: 100%;
+}
+.paragraph-two__header {
+    margin-bottom: 30px;
+    line-height: 52px;
+}
+
+.paragraph-two__sup-header {
+    margin-bottom: 30px;
+}
+
+.paragraph-two__text {
+    margin-bottom: 0;
+}
+
+.footer {
+    max-width: 840px;
+    margin: auto;
+}
+
+@media (max-width: 1024px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 767px) {
+    .header {
+        font-size: 3.5rem;
+        text-align: left;
+        line-height: 4.4rem;
+        margin-bottom: 15px;
+    }
+    .times {
+        margin-left: 0;
+    }
+    .content__header,
+    .paragraph-two__header {
+        font-size: 3rem;
+        line-height: 3.9rem;
+    }
+    .content__sup-header,
+    .paragraph-two__sup-header {
+        font-weight: 400;
+    }
+}

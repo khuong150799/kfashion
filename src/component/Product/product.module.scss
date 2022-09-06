@@ -1,0 +1,135 @@
+.wrapper-product {
+    position: relative;
+    margin-bottom: 50px;
+    overflow: hidden;
+    &:hover .search-icon {
+        transition: all 0.25s linear;
+        right: 12px;
+        cursor: pointer;
+    }
+    &:hover .heart-icon {
+        right: 12px;
+        transition: all 0.25s linear;
+        cursor: pointer;
+    }
+}
+.container-product-img {
+    display: block;
+    width: 100%;
+}
+.product-img {
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.content-product {
+    width: 100%;
+    padding-top: 20px;
+    font-size: 1.4rem;
+}
+
+.content-product-brand {
+    color: #6d6f73;
+    line-height: 1.8rem;
+}
+
+.content-product-name {
+    display: block;
+    color: #041e3a;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    margin: 8px 0;
+    cursor: pointer;
+    &:hover {
+        color: #d9121f;
+        transition: 350ms ease 0s;
+    }
+}
+
+.content-product-price {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: #041e3a;
+    display: flex;
+    margin-bottom: 8px;
+    .content-product-price-sale {
+        margin-right: 10px;
+        color: #d9121f;
+    }
+    span:nth-child(2) {
+        text-decoration: line-through;
+    }
+}
+
+.color-swatch {
+    display: flex;
+    align-items: center;
+    .color {
+        width: 23px;
+        height: 23px;
+        border-radius: 50%;
+        margin-right: 6px;
+    }
+    .color-one {
+        background-color: #023f6c;
+    }
+    .color-two {
+        background-color: #d9121f;
+    }
+    .color-three {
+        background-color: #1d1d1d;
+    }
+}
+
+.search-icon,
+.heart-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 2rem;
+    border-radius: 50%;
+    position: absolute;
+    right: -36px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-icon {
+    top: 12px;
+}
+.heart-icon {
+    top: 56px;
+}
+.heart-red {
+    color: #d9121f;
+}
+.sale,
+.hot {
+    position: absolute;
+    left: 12px;
+    font-size: 1.4rem;
+    width: 50px;
+    height: 20px;
+    color: #fff;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 20px;
+}
+.sale {
+    top: 12px;
+    background-color: #d9121f;
+}
+.hot {
+    top: 37px;
+    background: rgba(25, 25, 25, 1);
+}
+
+//--------------------------------
+
+@media (max-width: 1024px) {
+    .wrapper-product:hover .search-icon,
+    .wrapper-product:hover .heart-icon {
+        display: none;
+    }
+}

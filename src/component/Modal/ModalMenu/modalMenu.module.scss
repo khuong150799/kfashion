@@ -1,0 +1,45 @@
+.menu {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    position: relative;
+    top: -0.5px;
+    left: -0.5px;
+    padding: 0 30px 30px 30px;
+    position: relative;
+}
+
+.menu__header {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    padding: 29px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+.icon-menu {
+    margin-right: 15px;
+}
+.icon-close {
+    position: absolute;
+    top: 23px;
+    right: 20px;
+    font-size: 1.8rem;
+    padding: 10px;
+    display: flex;
+}
+.menu__header-title {
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.title-list {
+    list-style: none;
+    padding: 25px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+.title-item {
+    display: block;
+    font-size: 1.6rem;
+    padding: 8px 0;
+    text-transform: capitalize;
+}

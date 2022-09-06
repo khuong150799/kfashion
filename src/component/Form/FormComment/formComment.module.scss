@@ -1,0 +1,102 @@
+//form
+.form-review {
+    max-width: 1200px;
+    margin-bottom: 70px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group.active .form-control,
+.form-group.active .textarea {
+    border-color: #fe0000;
+    outline: 0px solid #fe0000;
+}
+.form-group.active .form-message {
+    display: block;
+    color: #fe0000;
+    margin: 4px 0 10px;
+    font-size: 1.2rem;
+}
+.form-message {
+    margin: 4px 0 10px;
+}
+.inp-name-email > .form-group:nth-child(1) {
+    width: 50%;
+    margin-right: 15px;
+}
+.inp-name-email > .form-group:nth-child(2) {
+    margin-left: 15px;
+    width: 50%;
+}
+.form-review > .form-group {
+    margin-bottom: 20px;
+}
+.textarea {
+    width: 100%;
+    height: 150px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid #cccccc;
+    padding: 12px 20px;
+    font-size: 1.5rem;
+    color: #191919;
+}
+.inp-name-email {
+    display: flex;
+    margin-bottom: 20px;
+}
+.form-lable {
+    font-size: 1.5rem;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+.form-control {
+    border: 1px solid #cccccc;
+    padding: 15px 20px;
+    border-radius: 100px;
+    font-size: 1.5rem;
+    color: #191919;
+    cursor: text;
+}
+.question {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.question-icon-check,
+.question-icon-notCheck {
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+.submit {
+    padding: 8px 80px;
+    display: flex;
+    margin: auto;
+    border-radius: 100px;
+    background-color: #191919;
+    color: #fff;
+    font-weight: 500;
+    font-size: 2rem;
+    font-family: 'Jost', sans-serif;
+    border: 1px solid transparent;
+    &:hover {
+        border: 1px solid #cccccc;
+        background-color: #fff;
+        color: #191919;
+        transition: 350ms ease 0s;
+    }
+}
+@media (max-width: 767px) {
+    .inp-name-email {
+        display: block;
+    }
+    .inp-name-email > .form-group:nth-child(1) {
+        width: 100%;
+        margin-right: 0px;
+    }
+    .inp-name-email > .form-group:nth-child(2) {
+        margin-left: 0px;
+        width: 100%;
+    }
+}

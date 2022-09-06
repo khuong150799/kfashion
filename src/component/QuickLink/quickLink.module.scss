@@ -1,0 +1,13 @@
+//popper shop
+.popper__shop-item {
+    display: block;
+    font-size: 1.7rem;
+    color: #191919;
+    padding: 5px 0;
+    cursor: pointer;
+    text-transform: capitalize;
+    &:hover {
+        color: rgba(217, 18, 31, 1);
+        transition: 350ms ease 0s;
+    }
+}

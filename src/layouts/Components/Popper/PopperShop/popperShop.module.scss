@@ -1,0 +1,31 @@
+.wrapper-tippy {
+    position: relative;
+    width: 100vw;
+    top: 80px;
+    left: -2.4%;
+    padding: 0 20px;
+}
+.popper__shop {
+    max-width: var(--width-page);
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popper__shop-list {
+    padding: 50px 0;
+    list-style: none;
+    column-count: 3;
+}
+
+.popper__shop-image {
+    height: 100%;
+    width: 460px;
+    background-image: url('https://demo.theme-sky.com/yobazar/wp-content/uploads/2021/03/megamenu-1.jpg');
+    background-color: transparent;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

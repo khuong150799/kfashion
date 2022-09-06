@@ -1,0 +1,58 @@
+.popper-account {
+    position: relative;
+    right: 38px;
+    min-width: 200px;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+    transition: opacity 300ms ease 0s;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+    border-radius: 8px;
+}
+.header-language {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin-top: -8px;
+}
+.icon-back {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 19px;
+}
+.title-language {
+    flex-grow: 1;
+    margin-left: 4px;
+    font-size: 1.6rem;
+    color: #191919;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.language:hover,
+.logOut:hover {
+    background-color: #16182308;
+    cursor: pointer;
+}
+.language,
+.logOut {
+    text-align: left;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+}
+.language-icon,
+.logOut-icon {
+    display: flex;
+    font-size: 1.8rem;
+    color: #191919;
+    margin-right: 8px;
+}
+
+.popper-account-item {
+    font-size: 1.6rem;
+    text-transform: capitalize;
+}

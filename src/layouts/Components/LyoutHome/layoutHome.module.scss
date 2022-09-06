@@ -1,0 +1,28 @@
+.wrapper {
+    width: 100%;
+    .wrapper__header {
+        .background-color-header {
+            background-color: transparent;
+            box-shadow: none;
+        }
+        .color-text-header {
+            color: #fff;
+        }
+        .text-shadow-header {
+            text-shadow: 1px 1px 3px #333;
+        }
+        &:hover .background-color-header {
+            background-color: #fff;
+            box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+        }
+        &:hover .color-text-header {
+            color: var(--color-text);
+        }
+        &:hover .text-shadow-header {
+            text-shadow: none;
+        }
+    }
+}
+.container {
+    width: 100%;
+}

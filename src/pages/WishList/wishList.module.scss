@@ -1,0 +1,33 @@
+.wrapper {
+    width: 100%;
+    padding: 0 25px;
+}
+
+.list-product {
+    max-width: var(--width-page);
+    margin: auto;
+}
+.wishlist-mobile {
+    display: none;
+}
+//---------------------
+
+@media (max-width: 767px) {
+    .wishlist-mobile {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px 10px;
+        border: 1px solid #e6e6e6;
+        margin-bottom: 10px;
+    }
+    .btn {
+        border-radius: 100px;
+        border: 1px solid #ccc;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.6rem;
+        padding: 13px 64px;
+        margin: -10px auto 10px;
+        display: flex;
+    }
+}

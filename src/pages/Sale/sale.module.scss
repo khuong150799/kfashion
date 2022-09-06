@@ -1,0 +1,17 @@
+.wrapper {
+    width: 100%;
+    padding: 0 25px;
+}
+.container {
+    max-width: var(--width-page);
+    display: flex;
+    margin: auto;
+}
+.products {
+    flex: 1;
+}
+.filters {
+    width: 0px;
+    transition: all 0.3s ease;
+    transform: translateX(-316px);
+}

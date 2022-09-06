@@ -1,0 +1,17 @@
+export { default } from '~/pages/Shop/Shop';
+export { default as PageShopOne } from '~/pages/Shop/PageOne/PageOne';
+export { default as PageShopTwo } from '~/pages/Shop/PageTwo/PageTwo';
+export { default as PageShopThree } from '~/pages/Shop/PageThree/PageThree';
+export { default as CoatsJackets } from './CoatsJackets/CoatsJackets';
+export { default as Jeans } from './Jeans/Jeans';
+export { default as LougnewearPyjamas } from './LoungewearPyjamas/LoungewearPyjamas';
+export { default as Shirts } from './Shirts/Shirts';
+export { default as TshirtsTops } from './TshirtsTops/TshirtsTops';
+export { default as DownCoats } from './DownCoats/DownCoats';
+export { default as Jumpers } from './Jumpers/Jumpers';
+export { default as Parkas } from './Parkas/Parkas';
+export { default as SweatShirts } from './SweatShirts/SweatShirts';
+export { default as Shorts } from './Shorts/Shorts';
+export { default as Socks } from './Socks/Socks';
+export { default as Trousers } from './Trousers/Trousers';
+export { default as CategoriesOfPopper } from './TabletMobile/Categories';

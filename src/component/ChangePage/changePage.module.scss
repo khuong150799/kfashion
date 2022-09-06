@@ -1,0 +1,26 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .active {
+        border-radius: 50%;
+        background-color: #000;
+        color: #fff;
+        transition: background-color 0.25s ease;
+    }
+}
+.page {
+    width: 34px;
+    height: 34px;
+    margin: 0 3px;
+    font-size: 1.4rem;
+    color: #191919;
+    line-height: 34px;
+    text-align: center;
+    &:hover {
+        background-color: #000;
+        color: #fff;
+        border-radius: 50%;
+        transition: background-color 0.25s ease;
+    }
+}
