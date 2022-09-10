@@ -80,7 +80,7 @@ function Header({ ...props }) {
     const searchRef = useRef();
     const handleToggelSearch = useCallback(() => {
         const top = searchRef.current.current.style.top;
-        searchRef.current.current.style.top = top === '91px' ? '-1391px' : '91px';
+        searchRef.current.current.style.top = top === '58px' ? '-1391px' : '58px';
     }, []);
 
     const login = false;

@@ -4,7 +4,7 @@
     height: 100vh;
     background-color: #fff;
     top: -1391px;
-    right: -25px;
+    right: -91px;
     overflow: auto;
     transition: top 0.35s ease;
     //mardin-top product
@@ -55,5 +55,11 @@
     &:hover {
         color: rgba(217, 18, 31, 1);
         transition: 350ms ease 0s;
+    }
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        right: -25px;
     }
 }

@@ -121,7 +121,5 @@ function nextPrevDot(option) {
         return showSlider({ i: 1, images: option.images, dots: option.dots, active: option.active });
     }, 3000);
 }
-//chỉ dùng cho html không dùng cho react
-// Array.from(dots).forEach((item) => item.addEventListener('click', nextPrevDot));
 
 export { showImage, showSlider, nextPrevDot };

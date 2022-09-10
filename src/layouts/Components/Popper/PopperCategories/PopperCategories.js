@@ -15,13 +15,6 @@ function PopperCategories({ children }, ref) {
     const handleScrollTop = useCallback(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []);
-    // const handleHideTippy = useCallback(() => {
-    //     const tippy = document.querySelector(`.${styles.wrapper}`);
-    //     tippy.style.display = 'none';
-    // }, []);
-
-    // const tippyCategories = useRef();
-    // useImperativeHandle(ref, () => tippyCategories);
 
     return (
         <div>
