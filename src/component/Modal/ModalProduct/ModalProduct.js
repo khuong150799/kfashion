@@ -3,6 +3,7 @@ import styles from './modalProduct.module.scss';
 import PropTyles from 'prop-types';
 
 import ProductBriefing from '~/component/ProductBriefing';
+import { memo } from 'react';
 
 const cx = classNames.bind(styles);
 
@@ -27,4 +28,4 @@ ModalProduct.propTyles = {
     onClick: PropTyles.func,
 };
 
-export default ModalProduct;
+export default memo(ModalProduct);

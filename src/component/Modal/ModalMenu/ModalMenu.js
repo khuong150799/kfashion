@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import configs from '~/configs';
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import PropTyles from 'prop-types';
 
 const cx = classNames.bind(Styles);
@@ -84,4 +84,4 @@ ModalMenu.propTyles = {
     onClick: PropTyles.func,
 };
 
-export default ModalMenu;
+export default memo(ModalMenu);

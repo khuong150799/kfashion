@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './product.module.scss';
 import PropTyles from 'prop-types';
 import { AiOutlineSearch, AiOutlineHeart, AiTwotoneHeart } from 'react-icons/ai';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -78,4 +78,4 @@ Product.propTyles = {
     color: PropTyles.bool,
 };
 
-export default Product;
+export default memo(Product);

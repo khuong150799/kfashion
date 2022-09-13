@@ -8,7 +8,7 @@ import { SoleIn24h } from '~/component/iconsSvg/icons';
 import { IoMdAdd, IoMdRemove } from 'react-icons/io';
 import { FaShoppingCart, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { AiOutlineHeart, AiOutlineMail, AiOutlineTwitter, AiFillInstagram, AiOutlineClose } from 'react-icons/ai';
-import { useCallback, useState, useRef } from 'react';
+import { useCallback, useState, useRef, memo } from 'react';
 import { AiFillStar } from 'react-icons/ai';
 import { BiCheck } from 'react-icons/bi';
 import configs from '~/configs';
@@ -363,4 +363,4 @@ ProductBriefing.propTyles = {
     color: PropTyles.bool,
 };
 
-export default ProductBriefing;
+export default memo(ProductBriefing);

@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import PropTyles from 'prop-types';
-import { useId } from 'react';
+import { memo, useId } from 'react';
 import styles from './checkBox.module.scss';
 
 const cx = classNames.bind(styles);
@@ -24,4 +24,4 @@ CheckBox.propTyles = {
     onChange: PropTyles.func,
 };
 
-export default CheckBox;
+export default memo(CheckBox);

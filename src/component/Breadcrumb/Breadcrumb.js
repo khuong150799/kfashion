@@ -6,7 +6,7 @@ import { GrFormNext } from 'react-icons/gr';
 import { AiOutlineDown, AiOutlineClose } from 'react-icons/ai';
 import { ImCheckboxChecked, ImCheckboxUnchecked } from 'react-icons/im';
 import { MdOutlineFilterAlt } from 'react-icons/md';
-import { useCallback, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 import Tippy from '@tippyjs/react/headless';
 import PropTypes from 'prop-types';
 import configs from '~/configs';
@@ -179,4 +179,4 @@ Breadcrumb.propTypes = {
     mobileTabletCategories: PropTyles.bool,
 };
 
-export default Breadcrumb;
+export default memo(Breadcrumb);

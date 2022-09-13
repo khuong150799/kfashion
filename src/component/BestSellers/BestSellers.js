@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './bestSellers.module.scss';
 import Product from '~/component/Product';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
-import { useCallback, useEffect, useRef } from 'react';
+import { memo, useCallback, useEffect, useRef } from 'react';
 
 const cx = classNames.bind(styles);
 
@@ -68,4 +68,4 @@ function BestSellers({ onClick }) {
 BestSellers.propTypes = {
     onClick: PropTypes.func,
 };
-export default BestSellers;
+export default memo(BestSellers);
