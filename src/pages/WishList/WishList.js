@@ -56,18 +56,20 @@ function WishList() {
                 {products.length > 0 && (
                     <div className={cx('wishlist-mobile')}>
                         {products.map((item, index) => (
-                            <ProductsCart
-                                key={index}
-                                src={item.src}
-                                title={item.title}
-                                price={item.price}
-                                handleRemoveProduct={handleRemoveProduct}
-                                wishlistMobile
-                            />
+                            <div className={cx('wishlist-mobile-product')}>
+                                <ProductsCart
+                                    key={index}
+                                    src={item.src}
+                                    title={item.title}
+                                    price={item.price}
+                                    handleRemoveProduct={handleRemoveProduct}
+                                    wishlistMobile
+                                />
+                                <Link to={configs.routes.cart} className={cx('btn')}>
+                                    add to cart
+                                </Link>
+                            </div>
                         ))}
-                        <Link to={configs.routes.cart} className={cx('btn')}>
-                            add to cart
-                        </Link>
                     </div>
                 )}
             </div>

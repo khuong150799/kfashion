@@ -28,18 +28,22 @@
     .wishlist-mobile {
         display: flex;
         flex-direction: column;
-        padding: 0 10px 10px;
-        border: 1px solid #e6e6e6;
         margin-bottom: 10px;
+    }
+    .wishlist-mobile-product {
+        padding: 10px;
+        margin-bottom: 30px;
+        border: 1px solid #e6e6e6;
     }
     .btn {
         border-radius: 100px;
         border: 1px solid #ccc;
         font-size: 1.6rem;
         font-weight: 500;
-        line-height: 1.6rem;
-        padding: 13px 64px;
+        line-height: 1.7rem;
+        padding: 12px 64px;
         margin: -10px auto 10px;
         display: flex;
+        justify-content: center;
     }
 }
