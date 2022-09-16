@@ -2,6 +2,18 @@
     width: 100%;
     padding: 0 25px;
 }
+.img-no-cart {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+    & > span {
+        padding-top: 20px;
+        font-size: 2rem;
+        color: #191919;
+    }
+}
 
 .list-product {
     max-width: var(--width-page);

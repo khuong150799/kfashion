@@ -8,11 +8,12 @@ import PopperShop, { PopperAccount, PopperCategories, PopperSale } from '~/layou
 import styles from './header.module.scss';
 import configs from '~/configs';
 import { HeartWishList, LogoIcon } from '~/component/iconsSvg/icons';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import Search from '../Search';
 import { Language, LogOut } from '~/component/iconsSvg/icons';
 import { ModalCart } from '~/component/Modal';
 import ModalMenu from '~/component/Modal/ModalMenu/ModalMenu';
+import { StateProducts } from '~/component/ProductSlice';
 
 const cx = classNames.bind(styles);
 
@@ -138,14 +139,8 @@ function Header({ ...props }) {
         },
     ];
 
-    //modal
-    const modalRef = useRef();
-    useEffect(() => {
-        const modalClass = modalRef.current.current;
-        const modal = document.querySelector(`.${modalClass}`);
-        console.log(modal);
-        console.log(modalRef.current.current);
-    }, []);
+    const [state, dispatch] = useContext(StateProducts);
+    const { product, products } = state;
 
     return (
         <>
@@ -295,7 +290,7 @@ function Header({ ...props }) {
                             })}
                         >
                             <HeartWishList />
-                            <p className={cx('quantity')}>8</p>
+                            {products.length > 0 && <p className={cx('quantity')}>{products.length}</p>}
                         </Link>
                         <button
                             onClick={handleShowCart}
@@ -312,7 +307,7 @@ function Header({ ...props }) {
             </div>
 
             {/**------------modal---------- */}
-            <ModalCart ref={modalRef} isOpen={isOpen} onClick={handleHideCart} />
+            <ModalCart isOpen={isOpen} onClick={handleHideCart} />
             <ModalMenu isOpen={isOpenMenu} onClick={handleHideModalMenu} />
         </>
     );

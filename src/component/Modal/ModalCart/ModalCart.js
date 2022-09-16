@@ -9,17 +9,13 @@ import { Link } from 'react-router-dom';
 import configs from '~/configs';
 import { categoriesShop } from '~/component/filejs/categoriesShop';
 import ProductsCart from './ProductsCart';
-import { forwardRef, useImperativeHandle, useRef } from 'react';
 
 Modal.setAppElement(document.getElementById('root'));
 
 const cx = classNames.bind(styles);
 
-function ModalCart({ isOpen = true, onClick }, ref) {
+function ModalCart({ isOpen = true, onClick }) {
     const product = true;
-
-    const modalRef = useRef(styles.wrapper);
-    useImperativeHandle(ref, () => modalRef);
 
     return (
         <div onClick={onClick}>
@@ -37,7 +33,7 @@ function ModalCart({ isOpen = true, onClick }, ref) {
                         </div>
                     </div>
                     <div className={cx('bag__content')}>
-                        {!product && (
+                        {!product ? (
                             <>
                                 <p className={cx('bag__header-product')}>No products in the cart</p>
                                 <h1 className={cx('bag__content-title')}>start shopping</h1>
@@ -52,17 +48,20 @@ function ModalCart({ isOpen = true, onClick }, ref) {
                                     ))}
                                 </ul>
                             </>
+                        ) : (
+                            <>
+                                <ProductsCart onClick={onClick} />
+                                <div className={cx('bill_view-cart')}>
+                                    <div className={cx('bill')}>
+                                        <p className={cx('bill-title')}>suptotal:</p>
+                                        <span className={cx('bill-price')}>$595.00</span>
+                                    </div>
+                                    <Link onClick={onClick} to={configs.routes.cart} className={cx('view-cart')}>
+                                        view cart
+                                    </Link>
+                                </div>
+                            </>
                         )}
-                        <ProductsCart onClick={onClick} />
-                        <div className={cx('bill_view-cart')}>
-                            <div className={cx('bill')}>
-                                <p className={cx('bill-title')}>suptotal:</p>
-                                <span className={cx('bill-price')}>$595.00</span>
-                            </div>
-                            <Link onClick={onClick} to={configs.routes.cart} className={cx('view-cart')}>
-                                view cart
-                            </Link>
-                        </div>
                     </div>
                 </div>
             </Modal>
@@ -75,4 +74,4 @@ ModalCart.propTyles = {
     onClick: PropTyles.func,
 };
 
-export default forwardRef(ModalCart);
+export default ModalCart;

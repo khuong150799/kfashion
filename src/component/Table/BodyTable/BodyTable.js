@@ -7,29 +7,25 @@ import configs from '~/configs';
 
 const cx = classNames.bind(styles);
 
-function BodyTable({ cart = false }) {
+function BodyTable({ cart = false, src, title, price, onClick }) {
     return (
         <tr className={cx('table__content')}>
             <td className={cx('table__title')}>
-                <span className={cx('product-remove')}>
+                <span onClick={onClick} className={cx('product-remove')}>
                     <GrClose />
                 </span>
             </td>
             <td className={cx('table__title', 'product-image')}>
                 <Link to={configs.routes.product}>
-                    <img
-                        className={cx('product-img')}
-                        src="https://yobazar-be87.kxcdn.com/yobazar/wp-content/uploads/2021/01/37-390x520.jpg"
-                        alt="images-one"
-                    />
+                    <img className={cx('product-img')} src={src} alt="images-one" />
                 </Link>
             </td>
             <td className={cx('table__title')}>
                 <Link to={configs.routes.product} className={cx('product-name')}>
-                    Men's classic stretch suit
+                    {title}
                 </Link>
             </td>
-            <td className={cx('table__title')}>$595.00</td>
+            <td className={cx('table__title')}>{price}</td>
             {cart ? (
                 <>
                     <td className={cx('table__title')}>2</td>
@@ -51,6 +47,10 @@ function BodyTable({ cart = false }) {
 
 BodyTable.propTyles = {
     cart: PropTyles.bool,
+    src: PropTyles.string,
+    title: PropTyles.string,
+    price: PropTyles.string,
+    onClick: PropTyles.func,
 };
 
 export default BodyTable;

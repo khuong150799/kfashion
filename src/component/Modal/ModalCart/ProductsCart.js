@@ -9,7 +9,16 @@ import { IoMdAdd, IoMdRemove } from 'react-icons/io';
 
 const cx = classNames.bind(styles);
 
-function ProductsCart({ onClick, sale = true, wishlistMobile = false, mobileProductsCart = false }) {
+function ProductsCart({
+    src = 'https://yobazar-be87.kxcdn.com/yobazar/wp-content/uploads/2021/01/37-390x520.jpg',
+    title = "Men's classic stretch suit",
+    price = '$49.00',
+    onClick,
+    sale = true,
+    wishlistMobile = false,
+    mobileProductsCart = false,
+    handleRemoveProduct,
+}) {
     const [quantity, setQuantity] = useState(1);
     const handleChangeQuantity = useCallback((e) => {
         setQuantity(e.target.value);
@@ -24,15 +33,11 @@ function ProductsCart({ onClick, sale = true, wishlistMobile = false, mobileProd
         <div className={cx('product-list')}>
             <div className={cx('product-item')}>
                 <Link to={configs.routes.product} onClick={onClick}>
-                    <img
-                        className={cx('product-item-img')}
-                        src="https://yobazar-be87.kxcdn.com/yobazar/wp-content/uploads/2021/01/37-390x520.jpg"
-                        alt="images-men"
-                    />
+                    <img className={cx('product-item-img')} src={src} alt="images-men" />
                 </Link>
                 <div className={cx('product-item-content')}>
                     <Link onClick={onClick} to={configs.routes.product}>
-                        <span className={cx('product-name')}>Men's classic stretch suit</span>
+                        <span className={cx('product-name')}>{title}</span>
                     </Link>
                     <div className={cx('quantyti-price')}>
                         {wishlistMobile ? (
@@ -58,12 +63,12 @@ function ProductsCart({ onClick, sale = true, wishlistMobile = false, mobileProd
 
                         <div className={cx('price')}>
                             {sale && <h1 className={cx('price-sale')}>$39.00</h1>}
-                            <h1 className={cx('price-current')}>$49.00</h1>
+                            <h1 className={cx('price-current')}>{price}</h1>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className={cx('remove-product')}>
+            <div onClick={handleRemoveProduct} className={cx('remove-product')}>
                 <GrClose />
             </div>
         </div>
@@ -74,6 +79,10 @@ ProductsCart.propTyles = {
     onClick: PropTyles.func,
     sale: PropTyles.bool,
     wishlistMobile: PropTyles.bool,
+    src: PropTyles.string,
+    title: PropTyles.string,
+    price: PropTyles.string,
+    handleRemoveProduct: PropTyles.func,
 };
 
 export default ProductsCart;

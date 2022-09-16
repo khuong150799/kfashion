@@ -1,13 +1,15 @@
-//popper shop
-.popper__shop-item {
+//popper shop modal cart
+.popper__shop-item,
+.item-title-products {
     display: block;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     color: #191919;
     padding: 5px 0;
     cursor: pointer;
     text-transform: capitalize;
-    &:hover {
-        color: rgba(217, 18, 31, 1);
-        transition: 350ms ease 0s;
-    }
+}
+.popper__shop-item:hover,
+.item-title-products:hover {
+    color: rgba(217, 18, 31, 1);
+    transition: 350ms ease 0s;
 }

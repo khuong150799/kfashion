@@ -170,13 +170,13 @@ function Home() {
                         <div className={cx('grid', 'wide', 'padding-screen-1025')}>
                             <div className={cx('row')}>
                                 <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
-                                    <Product onClick={handleClickIsOpenModal} />
+                                    <Product color onClick={handleClickIsOpenModal} />
                                 </div>
                                 <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
                                     <Product onClick={handleClickIsOpenModal} />
                                 </div>
                                 <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
-                                    <Product onClick={handleClickIsOpenModal} />
+                                    <Product color onClick={handleClickIsOpenModal} />
                                 </div>
                                 <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
                                     <Product onClick={handleClickIsOpenModal} />

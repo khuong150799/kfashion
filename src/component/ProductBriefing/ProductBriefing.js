@@ -8,10 +8,12 @@ import { SoleIn24h } from '~/component/iconsSvg/icons';
 import { IoMdAdd, IoMdRemove } from 'react-icons/io';
 import { FaShoppingCart, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { AiOutlineHeart, AiOutlineMail, AiOutlineTwitter, AiFillInstagram, AiOutlineClose } from 'react-icons/ai';
-import { useCallback, useState, useRef, memo } from 'react';
+import { useCallback, useState, useRef, memo, useContext, useEffect } from 'react';
 import { AiFillStar } from 'react-icons/ai';
 import { BiCheck } from 'react-icons/bi';
 import configs from '~/configs';
+import { StateProducts } from '../ProductSlice';
+import { addProduct, setProduct } from '../ProductSlice/productWishlist/action';
 
 Modal.setAppElement(document.getElementById('root'));
 
@@ -107,6 +109,33 @@ function ProductBriefing({
         Element = Link;
     }
 
+    //add, delete product wishlist and cart
+
+    const [state, dispatch] = useContext(StateProducts);
+    const { product, products } = state;
+
+    const imgRef = useRef();
+    const titleRef = useRef();
+    const priceRef = useRef();
+    const [click, setClick] = useState(false);
+
+    const addWishlist = useCallback(() => {
+        setClick(true);
+        if (!click) {
+            const src = imgRef.current.src;
+            const title = titleRef.current.innerHTML;
+            const price = priceRef.current.innerHTML;
+            dispatch(setProduct({ src, title, price }));
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [click]);
+
+    useEffect(() => {
+        if (click) {
+            dispatch(addProduct(product));
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [click]);
     return (
         <div onClick={onClick}>
             <Component {...props}>
@@ -146,7 +175,7 @@ function ProductBriefing({
                                     </li>
                                 </ul>
                                 <div className={cx('images-main')}>
-                                    <img src={src} alt={alt} className={cx('images-main-item')} />
+                                    <img ref={imgRef} src={src} alt={alt} className={cx('images-main-item')} />
                                 </div>
                             </div>
 
@@ -155,7 +184,7 @@ function ProductBriefing({
                                 <Link to={configs.routes.home} className={cx('brand')}>
                                     K Fashion
                                 </Link>
-                                <Element to={configs.routes.product} className={cx('product-name')}>
+                                <Element ref={titleRef} to={configs.routes.product} className={cx('product-name')}>
                                     Men’s classic long sleeves shirt
                                 </Element>
                                 <div className={cx('review')}>
@@ -183,7 +212,9 @@ function ProductBriefing({
                                 </div>
                                 <div className={cx('price')}>
                                     {sale && <h1 className={cx('price-sale')}>$39.00</h1>}
-                                    <h1 className={cx('price-current')}>$49.00</h1>
+                                    <h1 ref={priceRef} className={cx('price-current')}>
+                                        $49.00
+                                    </h1>
                                 </div>
 
                                 {/**------------------------------------color -----------------------------*/}
@@ -288,10 +319,10 @@ function ProductBriefing({
                                                     className={cx('heart')}
                                                 >
                                                     {ElementLinkOrButton === 'button' ? (
-                                                        <>
+                                                        <div onClick={addWishlist}>
                                                             <AiOutlineHeart />
                                                             <span className={cx('heart-text')}>Add to wishlist</span>
-                                                        </>
+                                                        </div>
                                                     ) : (
                                                         <>
                                                             <AiOutlineHeart className={cx('icon-heart')} />
