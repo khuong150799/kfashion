@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import axios from 'axios';
 import PropTyles from 'prop-types';
 import styles from './formSignInSignUp.module.scss';
 import { Link } from 'react-router-dom';
@@ -28,22 +29,51 @@ function FormSignUpSignIn({ titleForm = '', register = false }) {
             formgroup: `.${formgroupRef.current.className}`,
             active: `${styles.active}`,
             rules: [
-                validator.isRequired('[name="fullname"]', 'please enter this field'),
+                validator.isRequired('[name="fullName"]', 'please enter this field'),
                 validator.isRequired('[name="email"]', 'please enter this field'),
                 validator.isEmail('[name="email"]', 'this field is email'),
                 validator.isRequired('[name="password"]', 'please enter this field'),
                 validator.isMinLength('[name="password"]', 6, 'Please enter 6 or more characters'),
-                validator.isRequired('[name="password-confirm"]', 'please enter this field'),
-                validator.isConfirmed('[name="password-confirm"]', 'Invalid password', function () {
+                validator.isRequired('[name="passwordConfirm"]', 'please enter this field'),
+                validator.isConfirmed('[name="passwordConfirm"]', 'Invalid password', function () {
                     return document.querySelector('[name="password"]').value;
                 }),
                 validator.isGender('input[name="gender"]', 'please enter this field'),
             ],
-            onSubmit: function (data) {
-                console.log(data);
+            onSubmit: async function (data) {
+                try {
+                    const response = await axios({
+                        method: 'post',
+                        url: 'http://localhost:3300/api/register',
+                        data,
+                    });
+
+                    console.log(response);
+                } catch (error) {
+                    console.log(error);
+                }
             },
         });
     }, []);
+
+    //handle register
+    // const handleRegister = () => {
+
+    //     axios({
+    //         method: 'post',
+    //         url: 'http://localhost:3300/api/register',
+    //         data: {
+    //             firstName: 'Fred',
+    //             lastName: 'Flintstone',
+    //         },
+    //     })
+    //         .then(function (response) {
+    //             console.log(response);
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         });
+    // };
     return (
         <div className={cx('wrapper')}>
             <h1 className={cx('header')}>{titleForm}</h1>
@@ -51,7 +81,7 @@ function FormSignUpSignIn({ titleForm = '', register = false }) {
                 {register && (
                     <div className={cx('form-group')}>
                         <input
-                            name="fullname"
+                            name="fullName"
                             id={fullNameId}
                             type="text"
                             placeholder="First Name + Last Name"
@@ -84,7 +114,7 @@ function FormSignUpSignIn({ titleForm = '', register = false }) {
                     <>
                         <div className={cx('form-group')}>
                             <input
-                                name="password-confirm"
+                                name="passwordConfirm"
                                 id={passwordConfirmId}
                                 type="password"
                                 placeholder="Enter The Password"

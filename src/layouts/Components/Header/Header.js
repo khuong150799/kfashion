@@ -139,8 +139,9 @@ function Header({ ...props }) {
         },
     ];
 
-    const [state, dispatch] = useContext(StateProducts);
-    const { product, products } = state;
+    const value = useContext(StateProducts);
+    const [stateWishList, dispatchWishList] = value[0];
+    const { product, products } = stateWishList;
 
     return (
         <>

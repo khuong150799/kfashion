@@ -12,18 +12,23 @@ import { addProduct, setProduct } from '../ProductSlice/productWishlist/action';
 
 const cx = classNames.bind(styles);
 
-function Product({ onClick, sale = true, hot = false, color = false }) {
-    const [thumb, setThumb] = useState(
-        'https://yobazar-be87.kxcdn.com/yobazar/wp-content/uploads/2021/01/37-390x520.jpg',
-    );
+function Product({
+    onClick,
+    sale = true,
+    hot = false,
+    color = false,
+    thumbMain = 'https://yobazar-be87.kxcdn.com/yobazar/wp-content/uploads/2021/01/37-390x520.jpg',
+}) {
+    const [thumb, setThumb] = useState(thumbMain);
     const handleToggelThumb = useCallback((e) => {
         setThumb(e.target.dataset.thumb);
     }, []);
 
     //add, delete product wishlist and cart
-
-    const [state, dispatch] = useContext(StateProducts);
-    const { product, products } = state;
+    const value = useContext(StateProducts);
+    const [stateWishList, dispatchWishList] = value[0];
+    console.log(value[0]);
+    const { product, products } = stateWishList;
 
     const imgRef = useRef();
     const titleRef = useRef();
@@ -36,14 +41,14 @@ function Product({ onClick, sale = true, hot = false, color = false }) {
             const src = imgRef.current.src;
             const title = titleRef.current.innerHTML;
             const price = priceRef.current.innerHTML;
-            dispatch(setProduct({ src, title, price }));
+            dispatchWishList(setProduct({ src, title, price }));
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [heartRed]);
 
     useEffect(() => {
         if (heartRed) {
-            dispatch(addProduct(product));
+            dispatchWishList(addProduct(product));
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [heartRed]);

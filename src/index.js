@@ -4,6 +4,30 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './component/GlobalStyles';
 import { ProductsProvider } from './component/ProductSlice';
+import axios from 'axios';
+import snakecaseKeys from 'snakecase-keys';
+import camelcaseKeys from 'camelcase-keys';
+
+//interceptors
+axios.interceptors.request.use(
+    (req) => {
+        req.data = snakecaseKeys(req.data);
+        return req;
+    },
+    (err) => {
+        return Promise.reject(err);
+    },
+);
+
+axios.interceptors.response.use(
+    (res) => {
+        res.data = camelcaseKeys(res.data);
+        return res;
+    },
+    (err) => {
+        return Promise.reject(err);
+    },
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

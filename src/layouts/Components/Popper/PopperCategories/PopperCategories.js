@@ -43,9 +43,7 @@ function PopperCategories({ children }, ref) {
                                                     />
                                                     <CgMathPlus className={cx('plus')} />
                                                 </div>
-                                                <Link className={cx('title')} to={data.to}>
-                                                    {data.title}
-                                                </Link>
+                                                <p className={cx('title')}>{data.title}</p>
                                             </Link>
                                         ))}
                                     </div>

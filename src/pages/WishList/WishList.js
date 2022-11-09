@@ -15,14 +15,17 @@ import styles from './wishList.module.scss';
 const cx = classNames.bind(styles);
 
 function WishList() {
-    const [state, dispatch] = useContext(StateProducts);
-    const { product, products } = state;
+    const value = useContext(StateProducts);
+    const [stateWishList, dispatchWishList] = value[0];
+    console.log(stateWishList);
+
+    const { product, products } = stateWishList;
 
     const handleRemoveProduct = useCallback(
         (index) => {
-            dispatch(deleteProduct(index));
+            dispatchWishList(deleteProduct(index));
         },
-        [dispatch],
+        [dispatchWishList],
     );
 
     return (

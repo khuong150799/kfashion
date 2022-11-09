@@ -18,6 +18,7 @@ function Search({ prop }, ref) {
     //wrapper
     const searchRef = useRef();
     useImperativeHandle(ref, () => searchRef);
+
     return (
         <div ref={searchRef} className={cx('wrapper')}>
             <div className={cx('container-inp')}>

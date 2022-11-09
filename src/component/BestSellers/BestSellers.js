@@ -27,28 +27,28 @@ function BestSellers({ onClick }) {
             <div ref={bestSellersProductRef} className={cx('bestsellers__products')}>
                 <div className={cx('grid', 'wide')}>
                     <div className={cx('row', 'flex-wrap')}>
-                        <div ref={productRef} className={cx('col', 'c-12', 'm-4', 'l-3')}>
+                        <div ref={productRef} className={cx('col', 'c-12', 'm-4', 'l-4')}>
                             <Product onClick={onClick} />
                         </div>
-                        <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
+                        <div className={cx('col', 'c-12', 'm-4', 'l-4')}>
                             <Product onClick={onClick} />
                         </div>
-                        <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
+                        <div className={cx('col', 'c-12', 'm-4', 'l-4')}>
                             <Product onClick={onClick} />
                         </div>
-                        <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
+                        <div className={cx('col', 'c-12', 'm-4', 'l-4')}>
                             <Product onClick={onClick} />
                         </div>
-                        <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
+                        <div className={cx('col', 'c-12', 'm-4', 'l-4')}>
                             <Product onClick={onClick} />
                         </div>
-                        <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
+                        <div className={cx('col', 'c-12', 'm-4', 'l-4')}>
                             <Product onClick={onClick} />
                         </div>
-                        <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
+                        <div className={cx('col', 'c-12', 'm-4', 'l-4')}>
                             <Product onClick={onClick} />
                         </div>
-                        <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
+                        <div className={cx('col', 'c-12', 'm-4', 'l-4')}>
                             <Product onClick={onClick} />
                         </div>
                     </div>

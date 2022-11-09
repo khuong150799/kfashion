@@ -28,8 +28,12 @@ import WishList from '~/pages/WishList';
 import Cart from '~/pages/Cart';
 import Checkout from '~/pages/Checkout';
 import SignIn from '~/pages/SignIn';
+import { PageAd } from '~/pages/Ad';
 
 const PublicRouter = [
+    //ad
+    { path: configs.routes.ad, component: PageAd },
+    //home
     { path: configs.routes.home, component: Home, layout: LayoutHome },
     //page of shop
     { path: configs.routes.shop, component: Shop },

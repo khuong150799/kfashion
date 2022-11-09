@@ -14,6 +14,7 @@ import { BiCheck } from 'react-icons/bi';
 import configs from '~/configs';
 import { StateProducts } from '../ProductSlice';
 import { addProduct, setProduct } from '../ProductSlice/productWishlist/action';
+import { addProductCart, setProductCart } from '../ProductSlice/productCart/ActionCart';
 
 Modal.setAppElement(document.getElementById('root'));
 
@@ -99,20 +100,10 @@ function ProductBriefing({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ElementLinkOrButton]);
 
-    //--------------------------------------
-    let Component = 'div';
-    let Element = 'p';
-    const props = {};
-    if (isModal) {
-        Component = Modal;
-        props.isOpen = isOpen;
-        Element = Link;
-    }
-
     //add, delete product wishlist and cart
-
-    const [state, dispatch] = useContext(StateProducts);
-    const { product, products } = state;
+    const value = useContext(StateProducts);
+    const [stateWishList, dispatchWishList] = value[0];
+    const { product, products } = stateWishList;
 
     const imgRef = useRef();
     const titleRef = useRef();
@@ -125,17 +116,62 @@ function ProductBriefing({
             const src = imgRef.current.src;
             const title = titleRef.current.innerHTML;
             const price = priceRef.current.innerHTML;
-            dispatch(setProduct({ src, title, price }));
+            dispatchWishList(setProduct({ src, title, price }));
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [click]);
 
     useEffect(() => {
         if (click) {
-            dispatch(addProduct(product));
+            dispatchWishList(addProduct(product));
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [click]);
+
+    //add cart
+    const [add, setAdd] = useState(false);
+
+    const valueCart = useContext(StateProducts);
+    const [stateCart, dispatch] = valueCart[1];
+    // const { product, products } = stateCart;
+
+    const addCart = useCallback(() => {
+        console.log(1213);
+        setAdd(true);
+        if (!add) {
+            const src = imgRef.current.src;
+            const title = titleRef.current.innerHTML;
+            const price = priceRef.current.innerHTML;
+            console.log();
+            dispatch(setProductCart({ src, title, price }));
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [add]);
+
+    useEffect(() => {
+        if (add) {
+            dispatch(addProductCart(stateCart.product));
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [add]);
+
+    //--------------------------------------
+    let Component = 'div';
+    let Element = 'p';
+    const props = {};
+    if (isModal) {
+        Component = Modal;
+        props.isOpen = isOpen;
+        Element = Link;
+    }
+    useEffect(() => {
+        if (Element === 'p') {
+            titleRef.current.addEventListener('mouseover', () => {
+                titleRef.current.style.color = '#191919';
+            });
+        }
+    }, [Element]);
+
     return (
         <div onClick={onClick}>
             <Component {...props}>
@@ -148,7 +184,11 @@ function ProductBriefing({
                     <div className={cx('grid')}>
                         <div className={cx('row')}>
                             <div className={cx('images', 'col', 'c-12', 'm-12', 'l-6')}>
-                                <ul className={cx('images-children-list', { [paddingRight]: paddingRight })}>
+                                <ul
+                                    className={cx('images-children-list', {
+                                        [paddingRight]: paddingRight,
+                                    })}
+                                >
                                     <li className={cx('images-children-item')}>
                                         <img
                                             onClick={handleClickSrc}
@@ -301,7 +341,9 @@ function ProductBriefing({
                                         </div>
                                         <button className={cx('add-cart')}>
                                             <FaShoppingCart />
-                                            <h3 className={cx('add-cart-text')}>Add to cart</h3>
+                                            <h3 onClick={addCart} className={cx('add-cart-text')}>
+                                                Add to cart
+                                            </h3>
                                         </button>
                                     </div>
                                 </div>

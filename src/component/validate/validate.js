@@ -103,7 +103,6 @@ function validator(option) {
                         return values;
                     }, {});
                     option.onSubmit(formValue);
-                    console.log(formValue);
                 }
                 //trường hợp submit mặc định của trình duyệt
                 else {

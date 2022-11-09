@@ -7,7 +7,13 @@ import configs from '~/configs';
 
 const cx = classNames.bind(styles);
 
-function BodyTable({ cart = false, src, title, price, onClick }) {
+function BodyTable({
+    cart = false,
+    src = 'https://yobazar-be87.kxcdn.com/yobazar/wp-content/uploads/2021/01/37-390x520.jpg',
+    title,
+    price,
+    onClick,
+}) {
     return (
         <tr className={cx('table__content')}>
             <td className={cx('table__title')}>

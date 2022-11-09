@@ -68,6 +68,7 @@ function Home() {
     const handleScrollTop = useCallback(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []);
+
     return (
         <>
             <div className={cx('wrapper')}>
@@ -173,25 +174,19 @@ function Home() {
                                     <Product color onClick={handleClickIsOpenModal} />
                                 </div>
                                 <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
-                                    <Product onClick={handleClickIsOpenModal} />
+                                    <Product color onClick={handleClickIsOpenModal} />
                                 </div>
                                 <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
                                     <Product color onClick={handleClickIsOpenModal} />
                                 </div>
                                 <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
-                                    <Product onClick={handleClickIsOpenModal} />
+                                    <Product color onClick={handleClickIsOpenModal} />
                                 </div>
                                 <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
-                                    <Product onClick={handleClickIsOpenModal} />
+                                    <Product color onClick={handleClickIsOpenModal} />
                                 </div>
                                 <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
-                                    <Product onClick={handleClickIsOpenModal} />
-                                </div>
-                                <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
-                                    <Product onClick={handleClickIsOpenModal} />
-                                </div>
-                                <div className={cx('col', 'c-12', 'm-4', 'l-3')}>
-                                    <Product onClick={handleClickIsOpenModal} />
+                                    <Product color onClick={handleClickIsOpenModal} />
                                 </div>
                             </div>
                         </div>

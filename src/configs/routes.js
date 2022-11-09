@@ -1,4 +1,5 @@
 export const routes = {
+    ad: '/ad',
     home: '/',
     //page of shop
     shop: '/shop',
